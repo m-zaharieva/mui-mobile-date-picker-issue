@@ -14,6 +14,7 @@ import { ellipse, square, triangle } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -44,11 +45,22 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import { LocalizationProvider } from '@mui/x-date-pickers';
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
+    <LocalizationProvider
+          dateAdapter={AdapterDayjs}
+          adapterLocale="bg"
+          localeText={{
+            okButtonLabel: "Потвърди",
+            cancelButtonLabel: "Откажи",
+            datePickerToolbarTitle: "Избор на дата",
+          }}
+        >
+
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
@@ -81,6 +93,7 @@ const App: React.FC = () => (
         </IonTabBar>
       </IonTabs>
     </IonReactRouter>
+        </LocalizationProvider>
   </IonApp>
 );
 

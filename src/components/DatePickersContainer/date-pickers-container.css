@@ -1,0 +1,7 @@
+.date-pickers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--large-spacing-layout-elements);
+  justify-content: space-between;
+  margin-bottom: 1.8em;
+}
